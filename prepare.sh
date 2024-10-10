@@ -1,0 +1,1 @@
+pip3 install https://github.com/ZillaRU/AigcHub-TPU/releases/download/v0.1/tpu_perf-1.2.35-py3-none-manylinux2014_aarch64.whl
