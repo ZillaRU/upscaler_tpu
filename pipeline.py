@@ -4,10 +4,6 @@ from tpu_perf.infer import SGInfer
 class EngineOV:
     
     def __init__(self, model_path="", batch=1, device_id=0) :
-        # 如果环境变量中没有设置device_id，则使用默认值
-        if "DEVICE_ID" in os.environ:
-            device_id = int(os.environ["DEVICE_ID"])
-            print(">>>> device_id is in os.environ. and device_id = ",device_id)
         self.model_path = model_path
         self.model = SGInfer(model_path , batch=batch, devices=[device_id])
         self.device_id = device_id
@@ -175,7 +171,7 @@ class UpscaleModel:
 
 if __name__ == "__main__":
     import sys
-    model = "./models/resrgan4x.bmodel"
+    model = "./resrgan4x.bmodel"
     upmodel = UpscaleModel(model=model, padding=20)
     img   = Image.open(sys.argv[1])
     res   = upmodel.extract_and_enhance_tiles(img, upscale_ratio=4.0)
