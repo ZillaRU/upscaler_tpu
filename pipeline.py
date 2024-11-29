@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from tpu_perf.infer import SGInfer
 
